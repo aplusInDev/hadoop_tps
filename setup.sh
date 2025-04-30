@@ -23,7 +23,7 @@ cat ~/tp1_new/cfg/.bashrc >> ~/.bashrc
 source ~/.bashrc
 which javac
 # Set Hadoop environment variables
-echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 cat ~/tp1_new/cfg/core-site.xml > $HADOOP_HOME/etc/hadoop/core-site.xml
 cat ~/tp1_new/cfg/hdfs-site.xml > $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 cat ~/tp1_new/cfg/mapred-site.xml > $HADOOP_HOME/etc/hadoop/mapred-site.xml
