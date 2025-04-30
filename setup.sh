@@ -19,15 +19,15 @@ wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.0/hadoop-3.4.0.tar.gz
 # Extract Hadoop
 tar xzf hadoop-3.4.0.tar.gz
 # Copy Hadoop Configuration files
-cat cfg/.bashrc >> ~/.bashrc
+cat ~/tp1_new/cfg/.bashrc >> ~/.bashrc
 source ~/.bashrc
 which javac
 # Set Hadoop environment variables
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
-cat cfg/core-site.xml > $HADOOP_HOME/etc/hadoop/core-site.xml
-cat cfg/hdfs-site.xml > $HADOOP_HOME/etc/hadoop/hdfs-site.xml
-cat cfg/mapred-site.xml > $HADOOP_HOME/etc/hadoop/mapred-site.xml
-cat cfg/yarn-site.xml > $HADOOP_HOME/etc/hadoop/yarn-site.xml
+cat ~/tp1_new/cfg/core-site.xml > $HADOOP_HOME/etc/hadoop/core-site.xml
+cat ~/tp1_new/cfg/hdfs-site.xml > $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+cat ~/tp1_new/cfg/mapred-site.xml > $HADOOP_HOME/etc/hadoop/mapred-site.xml
+cat ~/tp1_new/cfg/yarn-site.xml > $HADOOP_HOME/etc/hadoop/yarn-site.xml
 # Format the HDFS namenode
 hdfs namenode -format
 # Start Hadoop services
