@@ -1,5 +1,5 @@
 #Hadoop Related Options
-export HADOOP_HOME=/home/hdoop/hadoop-3.4.0
+export HADOOP_HOME=/home/user/hadoop-3.4.0
 export HADOOP_INSTALL=$HADOOP_HOME
 export HADOOP_MAPRED_HOME=$HADOOP_HOME
 export HADOOP_COMMON_HOME=$HADOOP_HOME

@@ -22,7 +22,7 @@ tar xzf hadoop-3.4.0.tar.gz
 cat cfg/.bashrc >> ~/.bashrc
 source ~/.bashrc
 which javac
-readlink -f /usr/bin/javac
+# Set Hadoop environment variables
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 cat cfg/core-site.xml > $HADOOP_HOME/etc/hadoop/core-site.xml
 cat cfg/hdfs-site.xml > $HADOOP_HOME/etc/hadoop/hdfs-site.xml
