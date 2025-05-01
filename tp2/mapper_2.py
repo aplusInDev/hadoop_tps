@@ -8,7 +8,7 @@ if len(sys.argv) != 2:
     sys.exit(1)
 
 try:
-    temperature_argument = int(sys.argv[1])
+    temperature_argument = float(sys.argv[1])
 except ValueError:
     print("Error: Argument must be an integer.")
     sys.exit(1)
