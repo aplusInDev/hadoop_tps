@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Reducer module for processing weather data and counting months with temperature above a threshold."""
 import sys
 
 current_month = None
@@ -6,6 +7,7 @@ counter = 0
 
 
 def reducer():
+    """ Reducer function to read input from stdin and count months with temperature above threshold """
     global current_month, counter
     for line in sys.stdin:
         line = line.strip()
