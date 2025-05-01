@@ -13,13 +13,12 @@ def reducer():
         month, _ = line
         month = int(month)
         if month == current_month:
+            continue
+        else:
             if counter == 0:
                 counter = 1
             else:
                 counter += 1
-        else:
-            if current_month is not None:
-                print(f"{current_month}\t{counter}")
             current_month = month
     print(f"Number of months with temperature above threshold: {counter}")
 
