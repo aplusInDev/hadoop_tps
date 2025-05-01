@@ -15,6 +15,6 @@
   </property>
   <property>
     <name>dfs.namenode.http-address</name>
-    <value>0.0.0.0:50070</value>
+    <value>0.0.0.0:9870</value>
   </property>
 </configuration>
