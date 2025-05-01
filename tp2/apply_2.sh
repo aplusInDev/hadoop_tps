@@ -9,4 +9,4 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar \
 
 hdfs dfs -cat /output/part-00000
 hdfs dfs -rm -r /output_2
-hdfs dfs -rm -r /tp2
+hdfs dfs -rm -r /data/tp2/
