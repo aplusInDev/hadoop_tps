@@ -1,5 +1,5 @@
 hdfs dfs -mkdir -p /data/tp2/input
-hdfs dfs -mkdir -p /data/tp2/output
+hdfs dfs -mkdir -p /data/tp2/
 hdfs dfs -copyFromLocal ~/tp2/meteosample.txt /data/tp2/input/
 
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar \
