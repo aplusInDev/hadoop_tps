@@ -10,11 +10,11 @@
   </property>
   <property>
     <name>yarn.resourcemanager.hostname</name>
-    <value>hadoop-master</value>
+    <value>master</value>
   </property>
   <property>
     <name>yarn.resourcemanager.webapp.address</name>
-    <value>hadoop-master:8088</value>
+    <value>master:8088</value>
   </property>
   <property>
     <name>yarn.acl.enable</name>
@@ -26,14 +26,14 @@
   </property>
   <property>
     <name>yarn.resourcemanager.resource-tracker.address</name>
-    <value>hadoop-master:8025</value>
+    <value>master:8025</value>
   </property>
   <property>
     <name>yarn.resourcemanager.scheduler.address</name>
-    <value>hadoop-master:8030</value>
+    <value>master:8030</value>
   </property>
   <property>
     <name>yarn.resourcemanager.address</name>
-    <value>hadoop-master:8050</value>
+    <value>master:8050</value>
   </property>
 </configuration>
