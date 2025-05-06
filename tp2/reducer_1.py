@@ -2,27 +2,28 @@
 """ Reducer module for processing weather data and finding the maximum temperature per year."""
 import sys
 
-current_year = None
-max_temp = None
-
 
 def reducer():
-    """ Reducer function to read input from stdin and output year and max temperature """
-    global current_year, max_temp
+    current_year = None
+    max_temp = -float('inf')  # Initialize to negative infinity
+
     for line in sys.stdin:
         line = line.strip()
-        line = line.split(':')
-        year, temperature = line
-        year = int(year)
-        temperature = float(temperature)
+        key, value = line.split('\t', 1)
+        year = int(key)
+        temperature = float(value)
+
         if year == current_year:
-            if max_temp is None or temperature > max_temp:
+            if temperature > max_temp:
                 max_temp = temperature
         else:
             if current_year is not None:
                 print(f"{current_year}\t{max_temp}")
             current_year = year
             max_temp = temperature
+
+    if current_year is not None:
+        print(f"{current_year}\t{max_temp}")
 
 
 if __name__ == "__main__":

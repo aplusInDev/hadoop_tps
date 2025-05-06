@@ -4,14 +4,19 @@ import sys
 
 
 def mapper():
-    """ Mapper function to read input from stdin and output year and max temperature """
     for line in sys.stdin:
         line = line.strip()
-        line = line.split(':')
-        _, _, year, temperature, _ = line
-        year = int(year)
-        temperature = float(temperature)
-        print(f"{year}:{temperature}")
+        fields = line.split(':')
+        if len(fields) < 4:
+            continue
+        year = fields[2]
+        temperature = fields[3]
+        try:
+            year = int(year)
+            temperature = float(temperature)
+            print(f"{year}\t{temperature}")
+        except ValueError:
+            continue
 
 
 if __name__ == "__main__":
