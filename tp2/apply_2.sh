@@ -1,4 +1,9 @@
-THRESHOLD=0
+if [$# -eq 0]; then
+    echo "Usage: $0 <threshold>"
+    exit 1
+fi
+
+THRESHOLD=$1
 
 hdfs dfs -mkdir -p /data/tp2/input_2
 hdfs dfs -copyFromLocal ~/hadoop_tps/tp2/meteosample.txt /data/tp2/input_2/
