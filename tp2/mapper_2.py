@@ -16,17 +16,16 @@ def mapper():
     for line in sys.stdin:
         line = line.strip()
         fields = line.split(':')
-        if len(fields) != 5:  # Skip invalid lines
+        if len(fields) != 5:
             continue
         _, month, _, temperature_str, _ = fields
         try:
             month = int(month)
             temperature = float(temperature_str)
             if temperature > temperature_argument:
-                # Emit key-value pair with TAB separator
-                print(f"{month}\t{temperature}")  # ✅ Correct separator
+                print(f"{month}\t{temperature}")
         except ValueError:
-            continue  # Skip invalid data
+            continue
 
 if __name__ == "__main__":
     mapper()
