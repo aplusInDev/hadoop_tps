@@ -2,7 +2,7 @@
 
 # Function to check master processes
 check_master() {
-    required=("NameNode" "ResourceManager" "SecondaryNameNode")
+    required=("NameNode" "ResourceManager" "SecondaryNameNode" "NodeManager")
     missing=()
     
     for process in "${required[@]}"; do
