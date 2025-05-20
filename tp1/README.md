@@ -26,7 +26,6 @@ Follow these steps to quickly set up Hadoop on your system:
 
 ```bash
 git clone https://github.com/aplusInDev/hadoop_tps
-cd hadoop_tps
 ```
 
 ### 2. Make the Setup Script Executable
