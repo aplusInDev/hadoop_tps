@@ -23,6 +23,11 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 # ssh localhost
 # Install Hadoop
 wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.0/hadoop-3.4.0.tar.gz
+
+if [ $? -ne 0 ]; then
+    echo "Failed to download Hadoop. Please check your internet connection."
+    exit 1
+fi
 # Extract Hadoop
 tar xzf hadoop-3.4.0.tar.gz
 # Copy Hadoop Configuration files
