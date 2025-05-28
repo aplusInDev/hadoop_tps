@@ -40,7 +40,7 @@ cat ~/hadoop_tps/tp3/core-site.xml > $HADOOP_HOME/etc/hadoop/core-site.xml
 if [ "$node_type" == "master" ]; then
     cat ~/hadoop_tps/tp3/hdfs-master.xml > $HADOOP_HOME/etc/hadoop/hdfs-site.xml
     cat ~/hadoop_tps/tp3/yarn-master.xml > $HADOOP_HOME/etc/hadoop/yarn-site.xml
-    cat ~/hadoop_tps/tp3/workers > $HADOOP_HOME/etc/hadoop/workers
+    cat ~/hadoop_tps/tp3/workers >> $HADOOP_HOME/etc/hadoop/workers
 elif [ "$node_type" == "slave" ]; then
     cat ~/hadoop_tps/tp3/hdfs-slaves.xml > $HADOOP_HOME/etc/hadoop/hdfs-site.xml
     cat ~/hadoop_tps/tp3/yarn-slaves.xml > $HADOOP_HOME/etc/hadoop/yarn-site.xml
