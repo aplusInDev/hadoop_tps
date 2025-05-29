@@ -8,7 +8,7 @@ cat hadoop_tps/tp5/cfg/spark-env.sh >> $SPARK_HOME/conf/spark-env.sh
 cp $SPARK_HOME/conf/workers.template $SPARK_HOME/conf/workers
 
 if [ "$1" = "master" ]; then
-    cat hadoop_tps/tp5/cfg/workers >> $SPARK_HOME/conf/workers
+    cp hadoop_tps/tp5/cfg/workers $SPARK_HOME/conf/workers
     cp $SPARK_HOME/conf/spark-defaults.conf.template $SPARK_HOME/conf/spark-defaults.conf
     cat hadoop_tps/tp5/cfg/spark-defaults.conf >> $SPARK_HOME/conf/spark-defaults.conf
 
