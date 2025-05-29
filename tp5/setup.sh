@@ -1,4 +1,4 @@
-wget https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz
+wget https://archive.apache.org/dist/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz
 tar -xzf spark-3.5.5-bin-hadoop3.tgz
 sudo mv spark-3.5.5-bin-hadoop3 /opt/spark
 cat hadoop_tps/tp5/cfg/bashrc >> ~/.bashrc
