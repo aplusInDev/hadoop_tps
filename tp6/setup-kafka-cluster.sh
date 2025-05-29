@@ -87,8 +87,8 @@ else
     sudo mv kafka_2.13-3.9.0 kafka
 
     # Set ownership
-    sudo chown -R $USER:$USER /opt/zookeeper
-    sudo chown -R $USER:$USER /opt/kafka
+    sudo chown -R user:user /opt/zookeeper
+    sudo chown -R user:user /opt/kafka
 
     # Clean up
     sudo rm apache-zookeeper-3.8.4-bin.tar.gz kafka_2.13-3.9.0.tgz
@@ -111,8 +111,8 @@ source ~/.bashrc
 print_status "Creating ZooKeeper directories..."
 sudo mkdir -p /var/lib/zookeeper
 sudo mkdir -p /var/log/zookeeper
-sudo chown -R $USER:$USER /var/lib/zookeeper
-sudo chown -R $USER:$USER /var/log/zookeeper
+sudo chown -R user:user /var/lib/zookeeper
+sudo chown -R user:user /var/log/zookeeper
 
 # Configure ZooKeeper
 print_status "Configuring ZooKeeper..."
@@ -143,8 +143,8 @@ fi
 print_status "Creating Kafka directories..."
 sudo mkdir -p /var/lib/kafka-logs
 sudo mkdir -p /var/log/kafka
-sudo chown -R $USER:$USER /var/lib/kafka-logs
-sudo chown -R $USER:$USER /var/log/kafka
+sudo chown -R user:user /var/lib/kafka-logs
+sudo chown -R user:user /var/log/kafka
 
 # Configure Kafka
 print_status "Configuring Kafka server.properties..."
@@ -207,8 +207,8 @@ After=network.target remote-fs.target
 
 [Service]
 Type=forking
-User=$USER
-Group=$USER
+User=user
+Group=user
 Environment=JAVA_HOME=$JAVA_HOME
 ExecStart=/opt/zookeeper/bin/zkServer.sh start
 ExecStop=/opt/zookeeper/bin/zkServer.sh stop
@@ -230,8 +230,8 @@ After=zookeeper.service
 
 [Service]
 Type=forking
-User=$USER
-Group=$USER
+User=user
+Group=user
 Environment=JAVA_HOME=$JAVA_HOME
 Environment=KAFKA_HEAP_OPTS=-Xmx1G -Xms1G
 ExecStart=/opt/kafka/bin/kafka-server-start.sh -daemon /opt/kafka/config/server.properties
