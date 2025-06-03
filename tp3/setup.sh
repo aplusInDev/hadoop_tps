@@ -30,6 +30,7 @@ if [ $? -ne 0 ]; then
 fi
 # Extract Hadoop
 tar xzf hadoop-3.4.0.tar.gz
+sudo mv hadoop-3.4.0 /opt/hadoop
 # Copy Hadoop Configuration files
 cat ~/hadoop_tps/tp3/.bashrc >> ~/.bashrc
 source ~/.bashrc
