@@ -10,7 +10,7 @@ node_type=$1
 # Check for updates
 sudo apt update
 # Install Java
-sudo apt install -y openjdk-11-jdk
+sudo apt install -y openjdk-8-jdk
 # Check Java installation
 java -version; javac -version
 # Install SSH
@@ -36,7 +36,7 @@ cat ~/hadoop_tps/tp3/.bashrc >> ~/.bashrc
 source ~/.bashrc
 which javac
 # Set Hadoop environment variables
-echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 cat ~/hadoop_tps/tp3/core-site.xml > $HADOOP_HOME/etc/hadoop/core-site.xml
 if [ "$node_type" == "master" ]; then
     cat ~/hadoop_tps/tp3/hdfs-master.xml > $HADOOP_HOME/etc/hadoop/hdfs-site.xml
