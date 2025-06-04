@@ -12,7 +12,7 @@ source ~/.bashrc
 
 # Configure spark-env.sh
 sudo cp $SPARK_HOME/conf/spark-env.sh.template $SPARK_HOME/conf/spark-env.sh
-sudo cat hadoop_tps/tp5/cfg/spark-env.sh >> $SPARK_HOME/conf/spark-env.sh
+sudo bash -c "cat /home/user/hadoop_tps/tp5/cfg/spark-env.sh >> /opt/spark/conf/spark-env.sh"
 
 # Handle workers/slaves file (check which template exists)
 if [ -f "$SPARK_HOME/conf/workers.template" ]; then
