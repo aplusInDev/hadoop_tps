@@ -44,10 +44,10 @@ if [ "$1" = "master" ]; then
     # Copy Spark to worker nodes (fixed approach)
     for worker in slave1 slave2; do
         echo "Copying Spark to $worker..."
-
-        scp -r /opt/spark $worker:/opt/
-        scp ~/.bashrc $worker:~/.bashrc
-        ssh $worker "source ~/.bashrc"
+        
+        # Copy Spark directory to worker's tmp first, then move with sudo
+        scp -r /opt/spark $worker:/tmp/
+        ssh -t $worker "sudo mv /tmp/spark /opt/ && sudo chown -R user:user /opt/spark"
         
         echo "Spark copied to $worker successfully"
     done
