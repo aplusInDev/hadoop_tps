@@ -33,7 +33,7 @@ if [ "$1" = "master" ]; then
 
     # Configure spark-defaults.conf
     sudo cp $SPARK_HOME/conf/spark-defaults.conf.template $SPARK_HOME/conf/spark-defaults.conf
-    cat hadoop_tps/tp5/cfg2_4/spark-defaults.conf | sudo tee -a /opt/spark/cconf/spark-defaults.conf > /dev/null
+    cat hadoop_tps/tp5/cfg2_4/spark-defaults.conf | sudo tee -a /opt/spark/conf/spark-defaults.conf > /dev/null
 
     # Create HDFS directories
     hdfs dfs -mkdir -p /spark-logs
