@@ -7,12 +7,12 @@ sudo mv spark-2.4.8-bin-hadoop2.7 /opt/spark
 sudo chown -R user:user /opt/spark
 
 # Update bashrc and source it
-cat hadoop_tps/tp5/cfg/bashrc >> ~/.bashrc
+cat hadoop_tps/tp5/cfg2_4/bashrc >> ~/.bashrc
 source ~/.bashrc
 
 # Configure spark-env.sh
 sudo cp $SPARK_HOME/conf/spark-env.sh.template $SPARK_HOME/conf/spark-env.sh
-cat ~/hadoop_tps/tp5/cfg/spark-env.sh | sudo tee -a /opt/spark/conf/spark-env.sh > /dev/null
+cat ~/hadoop_tps/tp5/cfg2_4/spark-env.sh | sudo tee -a /opt/spark/conf/spark-env.sh > /dev/null
 
 # Handle workers/slaves file (check which template exists)
 if [ -f "$SPARK_HOME/conf/workers.template" ]; then
@@ -25,15 +25,15 @@ fi
 
 if [ "$1" = "master" ]; then
     # Configure workers file
-    if [ -f "hadoop_tps/tp5/cfg/workers" ]; then
-        sudo cp hadoop_tps/tp5/cfg/workers $SPARK_HOME/conf/workers
+    if [ -f "hadoop_tps/tp5/cfg2_4/workers" ]; then
+        sudo cp hadoop_tps/tp5/cfg2_4/workers $SPARK_HOME/conf/workers
         # Also copy to slaves file for compatibility
-        sudo cp hadoop_tps/tp5/cfg/workers $SPARK_HOME/conf/slaves
+        sudo cp hadoop_tps/tp5/cfg2_4/workers $SPARK_HOME/conf/slaves
     fi
 
     # Configure spark-defaults.conf
     sudo cp $SPARK_HOME/conf/spark-defaults.conf.template $SPARK_HOME/conf/spark-defaults.conf
-    sudo cat hadoop_tps/tp5/cfg/spark-defaults.conf >> $SPARK_HOME/conf/spark-defaults.conf
+    sudo cat hadoop_tps/tp5/cfg2_4/spark-defaults.conf >> $SPARK_HOME/conf/spark-defaults.conf
 
     # Create HDFS directories
     hdfs dfs -mkdir -p /spark-logs
