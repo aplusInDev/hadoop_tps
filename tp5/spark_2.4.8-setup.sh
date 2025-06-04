@@ -12,7 +12,11 @@ source ~/.bashrc
 
 # Configure spark-env.sh
 sudo cp $SPARK_HOME/conf/spark-env.sh.template $SPARK_HOME/conf/spark-env.sh
-cat ~/hadoop_tps/tp5/cfg2_4/spark-env.sh | sudo tee -a /opt/spark/conf/spark-env.sh > /dev/null
+if [ "$1" = "master" ]; then
+    cat ~/hadoop_tps/tp5/cfg2_4/master-env.sh | sudo tee -a /opt/spark/conf/spark-env.sh > /dev/null
+else
+    cat ~/hadoop_tps/tp5/cfg2_4/worker-env.sh | sudo tee -a /opt/spark/conf/spark-env.sh > /dev/null
+fi
 
 # Handle workers/slaves file (check which template exists)
 if [ -f "$SPARK_HOME/conf/workers.template" ]; then
@@ -40,20 +44,6 @@ if [ "$1" = "master" ]; then
     hdfs dfs -mkdir -p /spark-history
     hdfs dfs -chmod -R 777 /spark-logs
     hdfs dfs -chmod -R 777 /spark-history
-
-    # Copy Spark to worker nodes (fixed approach)
-    for worker in slave1 slave2; do
-        echo "Copying Spark to $worker..."
-        
-        # Copy Spark directory to worker's tmp first, then move with sudo
-        scp -r /opt/spark $worker:/tmp/
-        ssh -t $worker "sudo mv /tmp/spark /opt/ && sudo chown -R user:user /opt/spark"
-        
-        echo "Spark copied to $worker successfully"
-    done
-
-    # Wait a moment for file operations to complete
-    sleep 2
 
     # Create and upload Spark JARs archive
     echo "Creating Spark JARs archive..."

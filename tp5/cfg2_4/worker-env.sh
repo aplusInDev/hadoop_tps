@@ -1,0 +1,11 @@
+export SPARK_WORKER_CORES=2
+export SPARK_WORKER_MEMORY=2g
+export SPARK_WORKER_PORT=7078
+export SPARK_WORKER_WEBUI_PORT=8081
+export SPARK_WORKER_INSTANCES=1
+export SPARK_WORKER_DIR=/tmp/spark-worker
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export HADOOP_HOME=/opt/hadoop
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export SPARK_HOME=/opt/spark

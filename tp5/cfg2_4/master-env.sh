@@ -1,0 +1,9 @@
+export SPARK_MASTER_HOST=master
+export SPARK_MASTER_PORT=7077
+export SPARK_MASTER_WEBUI_PORT=8080
+export SPARK_HISTORY_OPTS="-Dspark.history.ui.port=18080"
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export HADOOP_HOME=/opt/hadoop
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export SPARK_HOME=/opt/spark
