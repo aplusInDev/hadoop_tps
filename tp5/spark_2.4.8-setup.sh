@@ -49,9 +49,9 @@ if [ "$1" = "master" ]; then
         scp -r /opt/spark $worker:/tmp/
         ssh $worker "sudo mv /tmp/spark /opt/ && sudo chown -R user:user /opt/spark"
         
-        # Copy bashrc
-        scp ~/.bashrc $worker:/tmp/.bashrc_new
-        ssh $worker "mv /tmp/.bashrc_new ~/.bashrc && source ~/.bashrc"
+        # # Copy bashrc
+        # scp ~/.bashrc $worker:/tmp/.bashrc_new
+        # ssh $worker "mv /tmp/.bashrc_new ~/.bashrc && source ~/.bashrc"
         
         echo "Spark copied to $worker successfully"
     done
