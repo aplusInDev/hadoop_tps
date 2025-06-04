@@ -1,4 +1,3 @@
-# .bashrc
 # Hadoop Related Options
 export HADOOP_HOME=/opt/hadoop
 export HADOOP_INSTALL=$HADOOP_HOME
